@@ -74,19 +74,51 @@ const char* Clockwise::getPattern() {
     }
 }
 
+// 顺时针转圈
+AntiClockwise::AntiClockwise() {
+    setPatternNum(8);
+}
+const char* AntiClockwise::getPattern() {
+    switch (getCnt()) {
+    case 0: return anti_clockwise_1;
+    case 1: return anti_clockwise_2;
+    case 2: return anti_clockwise_3;
+    case 3: return anti_clockwise_4;
+    case 4: return anti_clockwise_5;
+    case 5: return anti_clockwise_6;
+    case 6: return anti_clockwise_7;
+    case 7: return anti_clockwise_8;
+    default: return anti_clockwise_1;
+    }
+}
+
 // 圆圈变大
 Expand::Expand() {
-    setPatternNum(5);
+    setPatternNum(4);
 }
 
 const char* Expand::getPattern() {
     switch (getCnt()) {
-    case 0: return wavePattern_1;
-    case 1: return wavePattern_2;
-    case 2: return wavePattern_3;
-    case 3: return wavePattern_2;
-    case 4: return wavePattern_1;
-    default: return wavePattern_1;
+    case 0: return circle_s;
+    case 1: return circle_m;
+    case 2: return circle_l;
+    case 3: return circle_xl;
+    default: return circle_s;
+    }
+}
+
+// 圆圈变小
+Shrink::Shrink() {
+    setPatternNum(4);
+}
+
+const char* Shrink::getPattern() {
+    switch (getCnt()) {
+    case 0: return circle_xl;
+    case 1: return circle_l;
+    case 2: return circle_m;
+    case 3: return circle_s;
+    default: return circle_xl;
     }
 }
 
