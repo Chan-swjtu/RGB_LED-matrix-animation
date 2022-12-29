@@ -3,8 +3,6 @@
 
 #include "patterns.h"
 
-#define N_LED 18  // 每行或每列有多少LED灯珠
-
 // 一个笛卡尔坐标系的点
 class CCS {
 public:
@@ -41,10 +39,24 @@ public:
     const char* getPattern();
 };
 
+// 逆时针转圈
+class AntiClockwise : public Animation {
+public:
+    AntiClockwise();
+    const char* getPattern();
+};
+
 // 圆圈变大
 class Expand : public Animation {
 public:
     Expand();
+    const char* getPattern();
+};
+
+// 圆圈变小
+class Shrink : public Animation {
+public:
+    Shrink();
     const char* getPattern();
 };
 
